@@ -1,0 +1,18 @@
+#text duplicated
+def func(*words):
+    result = []
+    for text in words:
+        num = []
+        letters = []
+        for i in set(text):
+            letters.append(i)
+            num.append(text.count(i))
+        maximum = max(num)
+        if num.count(maximum) == 1:
+            indx = num.index(maximum)
+            text = text.replace(letters[indx], "|")
+            result.append(text)
+    return result
+
+print("Enter your text")
+print(func(input()))
